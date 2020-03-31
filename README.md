@@ -20,6 +20,8 @@
 
 [WPF and ADO.Net(Models) example](CW/lesson_02/DeanOffice "CW\lesson_02\DeanOffice")   
 
+[WPF Calculator example](HW/lesson_02/Calculator "HW\lesson_02\Calculator")   
+
 ---
 
 </p></details>
