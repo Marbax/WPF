@@ -3,9 +3,8 @@ using System.Runtime.CompilerServices;
 
 namespace DeanOffice.DataModels
 {
-    public class Faculty : INotifyPropertyChanged // интерфейс для комфортной работы с БД через ивенты
+    public class Group : INotifyPropertyChanged
     {
-
         private int _id;
 
         public int Id
@@ -29,10 +28,18 @@ namespace DeanOffice.DataModels
                 OnPropertyChanged("Name");
             }
         }
+        private int _facId;
 
+        public int FacultyId
+        {
+            get { return _facId; }
+            set
+            {
+                _facId = value;
+                OnPropertyChanged("FacultyId");
+            }
+        }
 
-
-        // Реализация интерфейса
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
         {

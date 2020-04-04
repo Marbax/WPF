@@ -12,7 +12,7 @@
 
 </p></details>
 
-<details><summary> 2.WPF and ADO basic project.  </summary><p>
+<details><summary> 2.WPF and ADO basic project. </summary><p>
 
 ---
 
@@ -21,6 +21,16 @@
 [WPF and ADO.Net(Models) example](CW/lesson_02/DeanOffice "CW\lesson_02\DeanOffice")   
 
 [WPF Calculator example](HW/lesson_02/Calculator "HW\lesson_02\Calculator")   
+
+---
+
+</p></details>
+
+<details><summary> 3.WPF and ADO continue same project. </summary><p>
+
+---
+
+[WPF and ADO.Net(Models) example](CW/lesson_02/DeanOffice "CW\lesson_02\DeanOffice")   
 
 ---
 

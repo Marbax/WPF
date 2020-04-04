@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeanOffice"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="900" >
+        Title="Dean Office" Height="500" Width="900" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -20,11 +20,11 @@
         </Grid.ColumnDefinitions>
         <GroupBox Header="Faculties" Grid.Row="0" Grid.Column="0" >
             <StackPanel>
-                <ComboBox x:Name="cbFaculties"/>
+                <ComboBox x:Name="cbFaculties" SelectionChanged="cbFaculties_SelectionChanged"/>
                 <TextBox x:Name="tbFacName"/>
                 <WrapPanel HorizontalAlignment="Center">
                     <Button x:Name="btnAddName" Content="Add" Click="btnAddName_Click"/>
-                    <Button x:Name="brnRemoveName" Content="Remove"/>
+                    <Button x:Name="brnRemoveName" Content="Remove" Click="brnRemoveName_Click"/>
                 </WrapPanel>
             </StackPanel>
         </GroupBox>
@@ -35,12 +35,12 @@
                     <Button x:Name="brnRemoveGroup" Content="Remove"/>
                 </WrapPanel>
                 <TextBox x:Name="tbGroupName" DockPanel.Dock="Bottom"/>
-                <ListBox x:Name="lbGroups" DockPanel.Dock="Bottom"/>
+                <ListBox x:Name="lbGroups" DockPanel.Dock="Bottom" SelectionChanged="lbGroups_SelectionChanged"/>
             </DockPanel>
         </GroupBox>
         <GridSplitter Width="4" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
         <GroupBox Header="Students" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
-            <List x:Name="lbStudents"/>
+            <ListBox x:Name="lbStudents" SelectionChanged="lbStudents_SelectionChanged"/>
         </GroupBox>
         <GridSplitter Width="4" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
         <GroupBox Header="Personal Data" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2">
