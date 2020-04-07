@@ -1,43 +1,21 @@
 ﻿using System.Linq;
 using DeanOffice.DataModels;
-// INotifyPropertyChanged
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-// collection for observer
-using System.Collections.ObjectModel;
-//sql spaces
-using System.Data.SqlClient;
 using System.Data;
-using System.Configuration;
 
 namespace DeanOffice.ViewModels
 {
-    class StudentsView : INotifyPropertyChanged
+    class StudentsView : AViewModel<Student>, INotifyPropertyChanged
     {
-        string _connectionString;
-        SqlConnection _conn;
-        SqlDataAdapter _dap;
-        DataTable _table;
 
-        public ObservableCollection<Student> Students { get; set; }
+        public StudentsView() : base("Students") { }
 
-        public StudentsView()
-        {
-            Students = new ObservableCollection<Student>();
-            _connectionString = ConfigurationManager.ConnectionStrings["Deans"].ConnectionString;
-            _conn = new SqlConnection(_connectionString);
-
-            string baseQuery = "select * from Students";
-            _dap = new SqlDataAdapter(baseQuery, _conn);
-            SqlCommandBuilder builder = new SqlCommandBuilder(_dap); // buildor working in background
-            _table = new DataTable();
-        }
-
-        public void LoadData()
+        public override void LoadData()
         {
             _table.Clear();
             _dap.Fill(_table);
-            Students.Clear();
+            ObjCollection.Clear();
             foreach (DataRow row in _table.Rows)
             {
                 Student s = new Student()
@@ -51,7 +29,7 @@ namespace DeanOffice.ViewModels
                     Characteristic = row["Characteristic"] as string,
                     GroupId = (int)row["GroupId"]
                 };
-                Students.Add(s);
+                ObjCollection.Add(s);
             }
         }
 
@@ -60,7 +38,7 @@ namespace DeanOffice.ViewModels
             _table.Clear();
             _dap.Fill(_table);
             var rows = _table.Select($"GroupId = {gId}");
-            Students.Clear();
+            ObjCollection.Clear();
             foreach (DataRow row in rows)
             {
                 Student s = new Student()
@@ -74,29 +52,46 @@ namespace DeanOffice.ViewModels
                     Characteristic = row["Characteristic"] as string,
                     GroupId = (int)row["GroupId"]
                 };
-                Students.Add(s);
+                ObjCollection.Add(s);
             }
         }
 
-        public void AddStudent(Student student)
+        public override void AddObj(Student toAdd)
         {
             DataRow row = _table.NewRow();
-            row["Id"] = student.Id; // передается 0
-            row["FName"] = student.FName;
-            row["Adress"] = student.Adress;
-            row["Phone"] = student.Phone;
-            row["Contacts"] = student.Contacts;
-            row["Perfomance"] = student.Perfomance;
-            row["Characteristic"] = student.Characteristic;
-            row["FacultyId"] = student.GroupId;
+            row["Id"] = toAdd.Id; // передается 0
+            row["FName"] = toAdd.FName;
+            row["Adress"] = toAdd.Adress;
+            row["Phone"] = toAdd.Phone;
+            row["Contacts"] = toAdd.Contacts;
+            row["Perfomance"] = toAdd.Perfomance;
+            row["Characteristic"] = toAdd.Characteristic;
+            row["GroupId"] = toAdd.GroupId;
             _table.Rows.Add(row);
             _dap.Update(_table); // insert сам сгенерит Id
         }
 
-        public void RemoveStudent(int sId)
+        public void RemoveByGroupId(int gId)
         {
-            var row = _table.Select($"Id = {sId}").FirstOrDefault();
-            row.Delete();
+            var rows = _table.Select($"GroupId = {gId}");
+            if (rows.Count() > 0)
+            {
+                foreach (var row in rows)
+                    row.Delete();
+                _dap.Update(_table);
+            }
+        }
+
+        public void EditStudentData(Student toEdit)
+        {
+            var row = _table.Select($"Id = {toEdit.Id}").FirstOrDefault();
+            row["FName"] = toEdit.FName;
+            row["Adress"] = toEdit.Adress;
+            row["Phone"] = toEdit.Phone;
+            row["Contacts"] = toEdit.Contacts;
+            row["Perfomance"] = toEdit.Perfomance;
+            row["Characteristic"] = toEdit.Characteristic;
+            row["GroupId"] = toEdit.GroupId;
             _dap.Update(_table);
         }
 
@@ -105,5 +100,6 @@ namespace DeanOffice.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
+
     }
 }

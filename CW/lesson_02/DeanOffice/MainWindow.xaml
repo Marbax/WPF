@@ -31,8 +31,8 @@
         <GroupBox Header="Groups" Grid.Row="1" Grid.Column="0" >
             <DockPanel>
                 <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
-                    <Button x:Name="btnAddGroup" Content="Add"/>
-                    <Button x:Name="brnRemoveGroup" Content="Remove"/>
+                    <Button x:Name="btnAddGroup" Content="Add" Click="btnAddGroup_Click"/>
+                    <Button x:Name="brnRemoveGroup" Content="Remove" Click="brnRemoveGroup_Click"/>
                 </WrapPanel>
                 <TextBox x:Name="tbGroupName" DockPanel.Dock="Bottom"/>
                 <ListBox x:Name="lbGroups" DockPanel.Dock="Bottom" SelectionChanged="lbGroups_SelectionChanged"/>
@@ -61,14 +61,14 @@
                 <TextBox x:Name="tbStudentPerf" DockPanel.Dock="Top"/>
 
                 <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Bottom">
-                    <Button x:Name="btnAddStudent" Content="Add"/>
-                    <Button x:Name="brnEditStudent" Content="Edit"/>
-                    <Button x:Name="brnRemoveStudent" Content="Remove"/>
-                    <Button x:Name="brnClearStudent" Content="Clear"/>
+                    <Button x:Name="btnAddStudent" Content="Add" Click="btnAddStudent_Click"/>
+                    <Button x:Name="brnEditStudent" Content="Edit" Click="brnEditStudent_Click"/>
+                    <Button x:Name="brnRemoveStudent" Content="Remove" Click="brnRemoveStudent_Click"/>
+                    <Button x:Name="brnClearStudent" Content="Clear" Click="brnClearStudent_Click"/>
                 </WrapPanel>
 
                 <Label Content="Charesteristics" DockPanel.Dock="Top"/>
-                <TextBox x:Name="tbStudentChares" MinHeight="25" Height="auto" DockPanel.Dock="Top"/>
+                <TextBox x:Name="tbStudentChares" Height="auto" DockPanel.Dock="Top"/>
 
             </DockPanel>
         </GroupBox>

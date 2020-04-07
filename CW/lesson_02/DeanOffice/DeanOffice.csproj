@@ -73,6 +73,7 @@
     </ApplicationDefinition>
     <Compile Include="DataModels\Group.cs" />
     <Compile Include="DataModels\Student.cs" />
+    <Compile Include="ViewModels\AViewModel.cs" />
     <Compile Include="ViewModels\FacultiesView.cs" />
     <Compile Include="ViewModels\GroupsView.cs" />
     <Compile Include="ViewModels\StudentsView.cs" />

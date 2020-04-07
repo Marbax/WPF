@@ -3,45 +3,24 @@ using DeanOffice.DataModels;
 // INotifyPropertyChanged
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-// collection for observer
-using System.Collections.ObjectModel;
 //sql spaces
-using System.Data.SqlClient;
 using System.Data;
-using System.Configuration;
 
 namespace DeanOffice.ViewModels
 {
-    public class GroupsView : INotifyPropertyChanged
+    class GroupsView : AViewModel<Group>, INotifyPropertyChanged
     {
-        private string _connectionString;
-        SqlConnection _conn;
-        SqlDataAdapter _dap;
-        DataTable _table;
+        public GroupsView() : base("Groups") { }
 
-        public ObservableCollection<Group> Groups { get; set; }
-
-        public GroupsView()
-        {
-            Groups = new ObservableCollection<Group>();
-            _connectionString = ConfigurationManager.ConnectionStrings["Deans"].ConnectionString;
-            _conn = new SqlConnection(_connectionString);
-
-            string baseQuery = "select * from Groups";
-            _dap = new SqlDataAdapter(baseQuery, _conn);
-            SqlCommandBuilder builder = new SqlCommandBuilder(_dap); // buildor working in background
-            _table = new DataTable();
-        }
-
-        public void LoadData()
+        public override void LoadData()
         {
             _table.Clear();
             _dap.Fill(_table);
-            Groups.Clear();
+            ObjCollection.Clear();
             foreach (DataRow row in _table.Rows)
             {
                 Group g = new Group() { Id = (int)row["Id"], Name = (string)row["Name"], FacultyId = (int)row["FacultyId"] };
-                Groups.Add(g);
+                ObjCollection.Add(g);
             }
         }
 
@@ -50,15 +29,15 @@ namespace DeanOffice.ViewModels
             _table.Clear();
             _dap.Fill(_table);
             var rows = _table.Select($"FacultyId = {fId}");
-            Groups.Clear();
+            ObjCollection.Clear();
             foreach (DataRow row in rows)
             {
                 Group g = new Group() { Id = (int)row["Id"], Name = (string)row["Name"], FacultyId = (int)row["FacultyId"] };
-                Groups.Add(g);
+                ObjCollection.Add(g);
             }
         }
 
-        public void AddGroup(Group group)
+        public override void AddObj(Group group)
         {
             DataRow row = _table.NewRow();
             row["Id"] = group.Id; // передается 0
@@ -68,11 +47,15 @@ namespace DeanOffice.ViewModels
             _dap.Update(_table); // insert сам сгенерит Id
         }
 
-        public void RemoveGroup(int gId)
+        public void RemoveByFacultyId(int fId)
         {
-            var row = _table.Select($"Id = {gId}").FirstOrDefault();
-            row.Delete();
-            _dap.Update(_table);
+            var rows = _table.Select($"FacultyId = {fId}");
+            if (rows.Count() > 0)
+            {
+                foreach (var row in rows)
+                    row.Delete();
+                _dap.Update(_table);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
