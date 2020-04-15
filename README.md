@@ -36,3 +36,13 @@
 
 </p></details>
 
+<details><summary> 3.WPF and Entity very basic. </summary><p>
+
+---
+
+[WPF list view , bindings , INotifyPropertyChanged and Entity Framework basics](CW/lesson_04/DeliveryService "CW\lesson_04\DeliveryService")   
+
+---
+
+</p></details>
+
