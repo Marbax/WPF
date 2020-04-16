@@ -20,9 +20,5 @@ namespace DeliveryService.Models
 
         public virtual List<Order> Orders { get; set; }
 
-        public override string ToString()
-        {
-            return $"Id - {Id}\nName - {Name}\nValue - {Value.ToString()}\n";
-        }
     }
 }

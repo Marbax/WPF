@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,13 +37,15 @@ namespace DeliveryService
             InitializeComponent();
 
             lvOrders.ItemsSource = _ov.ObjCollection;
-            lvProducts.ItemsSource = _pv.ObjCollection;
+            //lvProducts.ItemsSource = _pv.ObjCollection;
 
             _pvAll.LoadData();
             cbProductToAdd.ItemsSource = _pvAll.ObjCollection;
             cbProductToAdd.SelectedValuePath = "Id";
             cbProductToAdd.DisplayMemberPath = "Name";
 
+            
+            dgProducts.ItemsSource = _pv.ObjCollection;
         }
 
         private void lvOrders_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -194,6 +197,7 @@ namespace DeliveryService
 
         private void lvProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
             if (lvProducts.SelectedIndex != -1)
             {
                 _selectedProduct = lvProducts.SelectedItem as Product;
@@ -201,24 +205,21 @@ namespace DeliveryService
                 tbProductValue.Text = _selectedProduct.Value.ToString();
                 cbProductToAdd.SelectedIndex = -1;
             }
+            */
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            if (cbProductToAdd.SelectedIndex != -1)
+            if (cbProductToAdd.SelectedIndex != -1 && IsInputProductValid())
             {
                 if (_selectedOrder != null)
                 {
                     _selectedProduct = cbProductToAdd.SelectedItem as Product;
                     try
                     {
+                        _selectedOrder.Products.Add(_selectedProduct);
+                        //_ov.EditObj(_selectedOrder);
                         _ov.AddProductToOrder(_selectedProduct.Id, _selectedOrder.Id);
-                        _ov.LoadData();
-
-                        // most lame choose , but I didn't find another one
-                        _pv = new ProductView();
-                        lvProducts.ItemsSource = _pv.ObjCollection;
-
                         _pv.LoadData(_selectedOrder.Id);
                     }
                     catch (Exception ex)
@@ -270,34 +271,16 @@ namespace DeliveryService
             {
                 try
                 {
-                    _ov.RemoveProductFromOrder(_selectedProduct.Id, _selectedOrder.Id);
-
-                    // most lame choose , but I didn't find another one
-                    _pv = new ProductView();
-                    lvProducts.ItemsSource = _pv.ObjCollection;
-
-                    _pv.LoadData(_selectedOrder.Id);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Removing product from order ex : {ex.Message}");
-                }
-            }
-
-            if (cbProductToAdd.SelectedIndex != -1)
-            {
-                try
-                {
                     if (MessageBox.Show("Removal of this this object cause removal equalent objects from another orders.\nAre you sure? ", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        _pv.RemoveObj((int)cbProductToAdd.SelectedValue);
+                        _pv.RemoveObj(_selectedProduct.Id);
                         _pvAll.LoadData();
                         _pv.LoadData(_selectedOrder.Id);
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Remove product exception : {ex.Message}");
+                    Console.WriteLine($"Edit product exception : {ex.Message}");
                     MessageBox.Show("Such object doesn't exist", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
@@ -313,11 +296,6 @@ namespace DeliveryService
         {
             if (cbProductToAdd.SelectedIndex != -1)
                 cbProductToAdd.SelectedIndex = -1;
-        }
-
-        private void cbProductToAdd_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            tbProductName.Text = tbProductValue.Text = "";
         }
     }
 }

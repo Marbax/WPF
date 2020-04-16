@@ -12,6 +12,8 @@ namespace DeliveryService.ViewModels
 {
     public class ProductView : AViewModel<Product>
     {
+        Product SelectedProduct;
+
         public ProductView() : base()
         {
             //LoadData();
@@ -34,16 +36,8 @@ namespace DeliveryService.ViewModels
 
         public override void AddObj(Product toAdd)
         {
-            try
-            {
-                _dsm.Products.Add(toAdd);
-                _dsm.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Add product ex : {ex.Message}");
-                throw;
-            }
+            _dsm.Products.Add(toAdd);
+            _dsm.SaveChanges();
         }
 
         public override void EditObj(Product toEdit)

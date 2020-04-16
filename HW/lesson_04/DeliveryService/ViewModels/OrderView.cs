@@ -30,28 +30,14 @@ namespace DeliveryService.ViewModels
             _dsm.SaveChanges();
         }
 
-        public void AddProductToOrder(int prodId, int orderId)
+        public void AddProductToOrder(int prodId ,int orderId )
         {
-            var order = _dsm.Orders.SingleOrDefault(o => o.Id == orderId);
-            var prod = _dsm.Products.SingleOrDefault(p => p.Id == prodId);
-            if (order.Products.Any(p => p.Id == prodId))
-                throw new ApplicationException("Order alredy contains such a product");
+            var order = _dsm.Orders.SingleOrDefault(item => item.Id == orderId);
+            var prod = _dsm.Products.SingleOrDefault(item => item.Id == prodId);
 
             order.Products.Add(prod);
-            prod.Orders.Add(order);
-            _dsm.Orders.Attach(order);
-            _dsm.Products.Attach(prod);
-            _dsm.SaveChanges();
-        }
-
-        public void RemoveProductFromOrder(int prodId, int orderId)
-        {
-            var order = _dsm.Orders.SingleOrDefault(o => o.Id == orderId);
-            var prod = _dsm.Products.SingleOrDefault(p => p.Id == prodId);
-            if (!order.Products.Any(p => p.Id == prodId))
-                throw new ApplicationException("Order doesn't contain such a product");
-
-            order.Products.Remove(prod);
+            //prod.Orders.Add(order);
+            //_dsm.Products.Attach(prod);
             _dsm.Orders.Attach(order);
             _dsm.SaveChanges();
         }

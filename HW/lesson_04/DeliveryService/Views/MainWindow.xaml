@@ -44,7 +44,7 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding Path=Adress}"/>
+                            <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding Path=Adress , Mode=TwoWay}"/>
                             <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding Path=Mobile}"/>
                             <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
                             <GridViewColumn Header="Delivery Time" DisplayMemberBinding="{Binding Path=DelivTime}"/>
@@ -75,20 +75,40 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <ComboBox x:Name="cbProductToAdd" Grid.Column="0" Style="{StaticResource MyComboBox}" 
-                              SelectionChanged="cbProductToAdd_SelectionChanged" ToolTip="Select Product which you want to add to the order" />
+                    <ComboBox x:Name="cbProductToAdd" Grid.Column="0" Style="{StaticResource MyComboBox}" ToolTip="Select Product which you want to add to the order" />
                     <TextBox x:Name="tbProductName" Grid.Column="1" ToolTip="Editable name of the product" TextChanged="tbProduct_TextChanged"/>
                     <TextBox x:Name="tbProductValue" Grid.Column="2" ToolTip="Editable value of the product" TextChanged="tbProduct_TextChanged"/>
                 </Grid>
-                <ListView x:Name="lvProducts" SelectionChanged="lvProducts_SelectionChanged">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
-                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Path=Name}"/>
-                            <GridViewColumn Header="Value" DisplayMemberBinding="{Binding Path=Value}"/>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
+                <DataGrid x:Name="dgProducts" AlternatingRowBackground="Gray" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
+                        <DataGridTemplateColumn Header="Name">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding Path=Products}" SelectedItem="{Binding Path=SelectedProduct}">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Path=Name}"/>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Value">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Text="{Binding Path=Value}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </DockPanel>
         </GroupBox>
     </Grid>
