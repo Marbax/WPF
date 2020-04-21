@@ -36,11 +36,23 @@
 
 </p></details>
 
-<details><summary> 3.WPF and Entity very basic. </summary><p>
+<details><summary> 4.WPF and Entity very basic. </summary><p>
 
 ---
 
 [WPF list view , bindings , INotifyPropertyChanged and Entity Framework basics](CW/lesson_04/DeliveryService "CW\lesson_04\DeliveryService")   
+
+---
+
+</p></details>
+
+<details><summary> 5.XML flow document , tree view, FlowDocumentReader. </summary><p>
+
+---
+
+[WPF tree view , FlowDocumentReader](CW/lesson_05/DocumentReader "CW\lesson_05\DocumentReader")   
+
+[WPF tree view , FlowDocumentReader](HW/lesson_05/CookRecipes "CW\lesson_05\CookRecipes")   
 
 ---
 
