@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:CookRecipes">
+
+    <!--                                  BASES                          -->
+
+    <Style x:Key="DarkestStyle">
+        <Setter Property="ItemsControl.Background" Value="#1e1e1e" />
+        <Setter Property="ItemsControl.Foreground" Value="WhiteSmoke" />
+    </Style>
+    <Style x:Key="DarkerStyle">
+        <Setter Property="ItemsControl.Background" Value="#2d2d30" />
+        <Setter Property="ItemsControl.Foreground" Value="WhiteSmoke" />
+    </Style>
+    <Style x:Key="DarkStyle">
+        <Setter Property="ItemsControl.Background" Value="#3e3e42" />
+        <Setter Property="ItemsControl.Foreground" Value="WhiteSmoke" />
+    </Style>
+
+    <!--                                  CONTROLS                       -->
+
+    <Style TargetType="TreeView" BasedOn="{StaticResource DarkerStyle}">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style TargetType="FlowDocumentReader" BasedOn="{StaticResource DarkerStyle}"></Style>
+    <Style TargetType="GridSplitter" BasedOn="{StaticResource DarkStyle}"></Style>
+    <Style TargetType="TextBlock" BasedOn="{StaticResource DarkerStyle}"></Style>
+
+    <!--                                 FLOW_DOC                       -->
+
+
+    <Style x:Key="t1" BasedOn="{StaticResource DarkestStyle}">
+        <Setter Property="ItemsControl.FontSize" Value="24" />
+        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+        <Setter Property="ItemsControl.FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="t2" BasedOn="{StaticResource DarkestStyle}">
+        <Setter Property="ItemsControl.FontSize" Value="20" />
+        <Setter Property="TextBlock.TextAlignment" Value="Left" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="t3" BasedOn="{StaticResource DarkestStyle}">
+        <Setter Property="ItemsControl.FontSize" Value="18" />
+        <Setter Property="TextBlock.TextAlignment" Value="Left" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+    </Style>
+
+    <Style TargetType="Paragraph" x:Key="t4" BasedOn="{StaticResource DarkestStyle}">
+        <Setter Property="ItemsControl.FontSize" Value="14" />
+        <Setter Property="TextBlock.TextAlignment" Value="Left" />
+    </Style>
+
+    <Style TargetType="FlowDocument" BasedOn="{StaticResource DarkestStyle}">
+        <Setter Property="IsOptimalParagraphEnabled" Value="True" />
+        <Setter Property="Background" Value="#1e1e1e" />
+        <Setter Property="Foreground" Value="WhiteSmoke" />
+    </Style>
+
+</ResourceDictionary>

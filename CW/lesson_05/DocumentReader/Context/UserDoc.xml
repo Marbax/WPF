@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<node name="UserDoc" title="User Guide" icon="img/document.png">
+  <node name="Chapter_01" title="First Chapter" icon="img/bookmark.png">
+    <node name="Page_011" title="First Page" icon="img/page.png"/>
+    <node name="Page_012" title="Second Page" icon="img/page.png"/>
+    <node name="Page_013" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_02" title="Second Chapter" icon="img/bookmark.png">
+    <node name="Page_021" title="First Page" icon="img/page.png"/>
+    <node name="Page_022" title="Second Page" icon="img/page.png"/>
+    <node name="Page_023" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_03" title="Third Chapter" icon="img/bookmark.png">
+    <node name="Page_031" title="First Page" icon="img/page.png"/>
+    <node name="Page_032" title="Second Page" icon="img/page.png"/>
+    <node name="Page_033" title="Third Page" icon="img/page.png"/>
+  </node>
+</node>

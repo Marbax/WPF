@@ -1,0 +1,70 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:CookRecipes.XMLPages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    <Paragraph Style="{StaticResource t1}">
+        <Run Text="Golden Vegetable Soup"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph>
+        <Floater Width="150" HorizontalAlignment="Right">
+            <BlockUIContainer>
+                <Image Source="./Images/GoldenVegetableSoup.jpg"/>
+            </BlockUIContainer>
+        </Floater>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="Ingredients"/>
+    </Paragraph>
+    
+    <Paragraph>
+        <Run Text="1 medium yellow onion"/>
+        <LineBreak/>
+        <Run Text="2 stalks celery"/>
+        <LineBreak/>
+        <Run Text="3 medium carrots"/>
+        <LineBreak/>
+        <Run Text="2 garlic cloves"/>
+        <LineBreak/>
+        <Run Text="1/4 cup olive oil"/>
+        <LineBreak/>
+        <Run Text="1 tablespoon garlic powder"/>
+        <LineBreak/>
+        <Run Text="2 teaspoons dried basil"/>
+        <LineBreak/>
+        <Run Text="1 teaspoon dried oregano"/>
+        <LineBreak/>
+        <Run Text="1 teaspoon dried thyme"/>
+        <LineBreak/>
+        <Run Text="1/2 teaspoon turmeric"/>
+        <LineBreak/>
+        <Run Text="8 cups (2 quarts) veggie broth"/>
+        <LineBreak/>
+        <Run Text="5 ounces pasta spirals (about 2 cups dry)"/>
+        <LineBreak/>
+        <Run Text="1–2 teaspoons kosher salt, to taste"/>
+        <LineBreak/>
+        <Run Text="Fresh ground black pepper"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="How to Make Golden Vegetable Soup"/>
+    </Paragraph>
+
+    <Paragraph>
+        <Run Text="1. Dice the onion. Thinly slice the celery. Thinly slice the carrot into rounds. Mince the garlic."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="2. In a Dutch oven or large pot, heat the olive oil over medium heat. Add the onion, celery, carrots, and garlic, and saute for 5 to 7 minutes until the onion is translucent."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="3. Add the spices and stir. Continue cooking for about 1 minute."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="4. Add the vegetable broth, 1 teaspoon kosher salt, and pepper. Bring a simmer. Add the pasta and continue simmering until the pasta is cooked, about 10 minutes. Remove from the heat and allow to cool for several minutes. Taste and add salt as necessary."/>
+        <LineBreak/>
+        <LineBreak/>
+    </Paragraph>
+</FlowDocument>

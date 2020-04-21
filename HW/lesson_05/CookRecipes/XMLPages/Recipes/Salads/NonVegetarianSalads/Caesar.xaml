@@ -1,0 +1,121 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:CookRecipes.XMLPages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia" IsOptimalParagraphEnabled="True">
+    <Paragraph Style="{StaticResource t1}">
+        <Run Text="Caesar"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph>
+        <Floater Width="150" HorizontalAlignment="Right">
+            <BlockUIContainer>
+                <Image Source="./Images/Caesar.jpg"/>
+            </BlockUIContainer>
+        </Floater>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t2}">
+        <Run Text="Ingredients"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Dressing"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="6 anchovy fillets packed in oil, drained"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="1 small garlic clove"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Kosher salt"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="2 large egg yolks"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="2 tablespoons fresh lemon juice, plus more"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="¾ teaspoon Dijon mustard"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="2 tablespoons olive oil"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="½ cup vegetable oil"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="3 tablespoons finely grated Parmesan"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Freshly ground black pepper"/>
+         <LineBreak/>
+   </Paragraph>
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Croutons"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="3 cups torn 1' pieces country bread, with crusts"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="3 tablespoons olive oil"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Lettuce"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="3 romaine hearts, leaves separated"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Cheese"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="    Parmesan, for serving"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Dressing"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Chop together anchovy fillets, garlic, and pinch of salt. Use the side of a knife blade to mash into a paste, then scrape into a medium bowl. Whisk in egg yolks, 2 Tbsp. lemon juice, and mustard. Adding drop by drop to start, gradually whisk in olive oil, then vegetable oil; whisk until dressing is thick and glossy. Whisk in Parmesan. Season with salt, pepper, and more lemon juice, if desired."/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Croutons"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Make your own. Tearing, not cutting the bread ensures nooks and crannies that catch the dressing and add texture. Preheat oven to 375°. Toss bread with olive oil on a baking sheet; season with salt and pepper. Bake, tossing occasionally, until golden, 10–15 minutes."/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Lettuce"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Use whole leaves; they provide the ideal mix of crispness, surface area, and structure."/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Cheese"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Caesars crowned with a mound of grated Parmesan may look impressive, but all that clumpy cheese mutes the dressing. Instead, use a vegetable peeler to thinly shave a modest amount on top for little salty bursts."/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="The Assembly"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Skip the tongs. Use your hands to gently toss the lettuce, croutons, and dressing, then top off with the shaved Parm."/>
+    </Paragraph>
+
+
+</FlowDocument>

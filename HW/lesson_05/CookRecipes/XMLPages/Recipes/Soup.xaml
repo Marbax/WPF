@@ -1,0 +1,29 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:CookRecipes.XMLPages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    <Paragraph Style="{StaticResource t1}">
+        <Run Text="Soups"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph>
+        <Floater Width="150" HorizontalAlignment="Left">
+            <BlockUIContainer>
+                <Image Source="./Images/SoupCommon.jpg"/>
+            </BlockUIContainer>
+        </Floater>
+    </Paragraph>
+
+    <Paragraph>
+        <Run Text="Soup is a replenishing, aromatized and a complete meal. Soups play a very important role on the menu and are served as appetizer to stimulate the appetite for the rest of the heavier foods to follow, soups are served as a second course after the serving of hors d'oeuvres, if hors d'oeuvres is not served then the soups are served as a first course.  "/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph>
+        <Run Text="Soup, according to the dictionary, is a liquid food derived from meat, poultry, fish, or vegetables, most of these soups, no matter what their final ingredients may be, are completely based on stock, thus, the quality of the soup depends on the quality of the stock used in the preparation of the soup."/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph>
+        <Run Text="This is just a definition and there is no hard fast rule that every preparation has to be in a same way each time, what matter most is the techniques, ingredients and of course the taste."/>
+    </Paragraph>
+
+</FlowDocument>

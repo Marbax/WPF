@@ -1,0 +1,18 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:CookRecipes.XMLPages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    <Paragraph Style="{StaticResource t1}">
+        <Run Text="Vegeterian Salads"/>
+        <LineBreak/>
+    </Paragraph>
+    <Paragraph>
+        <Floater Width="150" HorizontalAlignment="Left">
+            <BlockUIContainer>
+                <Image Source="./Images/VegeterianComponents.jpg"/>
+            </BlockUIContainer>
+        </Floater>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="Vegetarian cuisine is based on food that meets vegetarian standards by not including meat and animal tissue products (such as gelatin or animal-derived rennet). For lacto-ovo vegetarianism (the most common type of vegetarianism in the Western world), eggs and dairy products, such as milk and cheese without rennet are permitted. For lacto vegetarianism, the earliest known type of vegetarianism (recorded in India), dairy products, such as milk and cheese, are permitted. The strictest forms of vegetarianism are veganism and fruitarianism, which exclude all animal products, including dairy, honey, and some refined sugars if filtered and whitened with bone char. There are also partial vegetarians who do not eat meat but may eat fish. "/>
+    </Paragraph>
+</FlowDocument>

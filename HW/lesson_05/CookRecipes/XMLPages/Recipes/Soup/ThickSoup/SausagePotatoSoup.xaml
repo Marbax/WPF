@@ -1,0 +1,82 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:CookRecipes.XMLPages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia">
+    <Paragraph Style="{StaticResource t1}">
+        <Run Text="Sausage Potato Soup"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph>
+        <Floater Width="150" HorizontalAlignment="Right">
+            <BlockUIContainer>
+                <Image Source="./Images/SausagePotatoSoup.jpg"/>
+            </BlockUIContainer>
+        </Floater>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="Ingredients"/>
+    </Paragraph>
+
+    <Paragraph>
+        <Run Text=" 1 pound spicy Italian sausage (can use mild)"/>
+        <LineBreak/>
+        <Run Text=" 5 tablespoons unsalted butter, separated"/>
+        <LineBreak/>
+        <Run Text=" 1 tablespoon olive oil"/>
+        <LineBreak/>
+        <Run Text=" 2 and 1/4 cups mirepoix: 3/4 cup diced carrots, 3/4 cup diced celery, 3/4 cup diced yellow onion"/>
+        <LineBreak/>
+        <Run Text=" 2 cloves garlic, minced"/>
+        <LineBreak/>
+        <Run Text=" 4 cups chopped baby gold potatoes"/>
+        <LineBreak/>
+        <Run Text=" 1 teaspoon EACH: dried basil, dried parsley flakes"/>
+        <LineBreak/>
+        <Run Text=" 4 cups chicken stock (or chicken broth)"/>
+        <LineBreak/>
+        <Run Text=" 1/4 cup + 2 tablespoons all-purpose flour"/>
+        <LineBreak/>
+        <Run Text=" 3 cups 1% milk"/>
+        <LineBreak/>
+        <Run Text=" 1/2 cup heavy cream"/>
+        <LineBreak/>
+        <Run Text=" 1 teaspoon salt and 1/2 teaspoon pepper"/>
+        <LineBreak/>
+        <Run Text=" 2 cups extra SHARP Cheddar Cheese"/>
+        <LineBreak/>
+        <Run Text=" 1/4 cup sour cream (fat free is great)"/>
+        <LineBreak/>
+    </Paragraph>
+
+    <Paragraph Style="{StaticResource t3}">
+        <Run Text="How to Make Sausage Potato Soup"/>
+    </Paragraph>
+
+    <Paragraph>
+        <Run Text="1."/>
+        <Run Text="SAUSAGE:" FontWeight="Bold"/>
+        <Run Text=" Line a large plate with paper towel and set aside. Heat a very large pot (I recommend cast iron), over medium-high heat. Once hot, add in the sausage. Let stand without touching for 30 seconds to a minute. Then stir and crumble up the meat until you have sausage crumbles. Transfer to prepared plate and drain off any grease except for 1 tablespoon. If there is no grease that's fine, add in 1 tablespoon olive oil to the pot."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="2."/>
+        <Run Text="VEGGIES:" FontWeight="Bold"/>
+        <Run Text=" In the same pot with 1 tablespoon sausage grease OR olive oil, melt 1 tablespoon of the butter. Add the diced carrots, celery and onion and saute 5-7 minutes or until tender (if not diced small, you may need 7-10 minutes). Add garlic and saute 30 seconds more."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="3."/>
+        <Run Text="POTATOES and SEASONING:" FontWeight="Bold"/>
+        <Run Text="Stir in the chopped potatoes, dried basil, dried parsley, salt and pepper to taste (I add 1 teaspoon fine sea salt and 1/2 teaspoon freshly cracked pepper, but add to preference and don't forget to taste and adjust at the end!). Stir. Add in chicken stock or broth. Bring to a boil over medium-high heat, then reduce heat to medium, cover with lid and cook 15-20 minutes or until the potatoes are fork tender (easily pierced with a fork)."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="4."/>
+        <Run Text="CREAM SAUCE:" FontWeight="Bold"/>
+        <Run Text="Meanwhile, melt remaining 4 tablespoons butter in a medium saucepan over medium heat. Stir in flour and cook, whisking constantly 1 minute. While whisking vigorously, slowly pour in milk (whisk well until smooth). Cook stirring constantly until mixture begins to gently boil and thicken and then stir in the heavy cream."/>
+        <LineBreak/>
+        <LineBreak/>
+        <Run Text="5."/>
+        <Run Text="FINISHING:" FontWeight="Bold"/>
+        <Run Text="Remove from heat and once all veggies are tender pour the milk/cream mixture into the soup and stir. Lower heat to low and stir in the shredded cheese. Cook until cheese is melted. Stir in sour cream. Return the sausage into the soup. Season to taste with salt and pepper. Serve warm with freshly chopped parsley or thyme and bread!"/>
+        <LineBreak/>
+    </Paragraph>
+</FlowDocument>

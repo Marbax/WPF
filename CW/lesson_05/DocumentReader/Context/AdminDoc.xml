@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<node name="AdminDoc" title="Admin Guide" icon="img/document.png">
+  <node name="Chapter_11" title="First Chapter" icon="img/bookmark.png">
+    <node name="Page_111" title="First Page" icon="img/page.png"/>
+    <node name="Page_112" title="Second Page" icon="img/page.png"/>
+    <node name="Page_113" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_12" title="Second Chapter" icon="img/bookmark.png">
+    <node name="Page_121" title="First Page" icon="img/page.png"/>
+    <node name="Page_122" title="Second Page" icon="img/page.png"/>
+    <node name="Page_123" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_13" title="Third Chapter" icon="img/bookmark.png">
+    <node name="Page_131" title="First Page" icon="img/page.png"/>
+    <node name="Page_132" title="Second Page" icon="img/page.png"/>
+    <node name="Page_133" title="Third Page" icon="img/page.png"/>
+  </node>
+</node>

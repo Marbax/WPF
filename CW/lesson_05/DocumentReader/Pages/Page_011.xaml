@@ -1,0 +1,12 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:local="clr-namespace:DocumentReader.Pages"
+              ColumnWidth="400" FontSize="14" FontFamily="Georgia"
+              IsOptimalParagraphEnabled="True">
+    <Paragraph Style="{StaticResource t1}">
+        <LineBreak/>
+        <Run Text="First Page"/>
+    </Paragraph>
+    <Paragraph Style="{StaticResource t4}">
+        <Run Text="PXE (англ. Preboot eXecution Environment, произносится пикси) — среда для загрузки компьютера с помощью сетевой карты без использования локальных носителей данных (жёсткого диска, USB-накопителя и т.п.). Для организации загрузки системы в PXE используются протоколы IP, UDP, BOOTP и TFTP.PXE-код, обычно находящийся в ПЗУ сетевой карты, получает из сети по протоколу TFTP (получив адрес TFTP-сервера по BOOTP) исполняемый файл, после чего передаёт ему управление. Спецификация PXE ограничивает размер загрузчика 32 килобайтами, поэтому иногда используется двухстадийная загрузка, когда первый загрузчик получает и запускает вторичный, который уже получает и запускает образ операционной системы.Одна из реализаций загружаемого по PXE файла — pxelinux из комплекта программ Syslinux. pxelinux умеет показывать пользователю меню, похожее на меню syslinux, а также загружать по сети и передавать управление ядру Linux и программам, имеющим идентичный формат загрузки (например, Memtest86).Для Windows систем существует специально разработанная сборка, демонстрирующая возможности загрузки и передачи управления не только Linux-ядру, но и образам ISO-дисков BartPE, которые являются прототипами ядра Windows: Tauru$ PXE Environment v1.0  "/>
+    </Paragraph>
+</FlowDocument>

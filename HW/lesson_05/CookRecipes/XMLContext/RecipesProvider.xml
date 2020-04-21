@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<node name="Recipes" title="Recipes" path="/" icon="Images/cookbook.png">
+  <node name="Salads" title="Salads" path="/Recipes/" icon="Images/salad.png">
+    <node name="VegetarianSalads" title="Vegetarian Salads" path="/Recipes/Salads/" icon="Images/salad.png">
+      <node name="BarleySalad" title="Barley Salad" path="/Recipes/Salads/VegetarianSalads/" icon="Images/salad.png"/>
+    </node>
+    <node name="NonVegetarianSalads" title="Non Vegetarian Salads" path="/Recipes/Salads/" icon="Images/salad.png">
+      <node name="Caesar" title="Caesar" path="/Recipes/Salads/NonVegetarianSalads/" icon="Images/salad.png"/>
+    </node>
+  </node>
+  <node name="Soup" title="Soup" path="/Recipes/" icon="Images/soup.png">
+    <node name="ThickSoup" title="Thick Soup" path="/Recipes/Soup/" icon="Images/soup.png">
+      <node name="SausagePotatoSoup" title="Sausage Potato Soup" path="/Recipes/Soup/ThickSoup/" icon="Images/soup.png">
+      </node>
+    </node>
+    <node name="ThinSoup" title="Thin Soup" path="/Recipes/Soup/" icon="Images/soup.png">
+      <node name="Miso" title="Miso" path="/Recipes/Soup/ThinSoup/" icon="Images/soup.png">
+      </node>
+      <node name="GoldenVegetableSoup" title="Golden Vegetable Soup" path="/Recipes/Soup/ThinSoup/" icon="Images/soup.png">
+      </node>
+    </node>
+  </node>
+  
+</node>

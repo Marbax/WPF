@@ -1,0 +1,62 @@
+﻿<Window x:Class="DocumentReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocumentReader"
+        mc:Ignorable="d"
+        Title="Technical documentation reader" Height="550" Width="800" Icon="img/logo.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="25">
+            <Button x:Name="btnUserGuide" Click="btnUserGuide_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/user.png"/>
+                    <TextBlock Text="User Guide"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnAdminGuide" Click="btnAdminGuide_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/admin.png"/>
+                    <TextBlock Text="Admin Guide"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnDevGuide" Click="btnDevGuide_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="img/dev.png"/>
+                    <TextBlock Text="Developer Guide"/>
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <GroupBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Header="Navigation" MinWidth="200">
+            <TreeView x:Name="tvContext" SelectedItemChanged="tvContext_SelectedItemChanged">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate 
+                        ItemsSource="{Binding XPath=node}" 
+                        ItemContainerStyle="{StaticResource HierarchicalDataTemplateStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding XPath=@icon}" Style="{StaticResource tbItemStyle}"/>
+                            <TextBlock Text="{Binding XPath=@title}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="View" >
+            <FlowDocumentReader x:Name="fdrReader"/>
+        </GroupBox>
+        <StatusBar Grid.Row="2" Grid.Column="1" Height="25">
+            <StatusBarItem >
+                <TextBlock Text="Temp"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

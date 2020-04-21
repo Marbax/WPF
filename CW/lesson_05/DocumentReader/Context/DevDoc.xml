@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<node name="DevDoc" title="Developer Guide" icon="img/document.png">
+  <node name="Chapter_21" title="First Chapter" icon="img/bookmark.png">
+    <node name="Page_211" title="First Page" icon="img/page.png"/>
+    <node name="Page_212" title="Second Page" icon="img/page.png"/>
+    <node name="Page_213" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_22" title="Second Chapter" icon="img/bookmark.png">
+    <node name="Page_221" title="First Page" icon="img/page.png"/>
+    <node name="Page_222" title="Second Page" icon="img/page.png"/>
+    <node name="Page_223" title="Third Page" icon="img/page.png"/>
+  </node>
+  <node name="Chapter_23" title="Third Chapter" icon="img/bookmark.png">
+    <node name="Page_231" title="First Page" icon="img/page.png"/>
+    <node name="Page_232" title="Second Page" icon="img/page.png"/>
+    <node name="Page_233" title="Third Page" icon="img/page.png"/>
+  </node>
+</node>
