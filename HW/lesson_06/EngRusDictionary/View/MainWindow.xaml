@@ -11,14 +11,14 @@
     <Window.Resources>
         <VM:MyConverter x:Key="MyConverter"/>
     </Window.Resources>
-    <Grid Style="{StaticResource DarkestStyle}">
+    <Grid Style="{StaticResource DarkestStyle}" Margin="-6,0,6,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <!--                              DICTIONARY                     -->
-        <DataGrid x:Name="dgDictinary" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding MainView}" AutoGenerateColumns="False"
+        <DataGrid x:Name="dgDictinary" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding MainTable}" AutoGenerateColumns="False"
                   SelectionMode="Single" SelectionUnit="FullRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" IsReadOnly="True" Width="0.5*" Binding="{Binding Path=Id}"></DataGridTextColumn>
@@ -64,12 +64,24 @@
                     </MultiBinding>
                 </Button.CommandParameter>
             </Button>
-            <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Content="Delete Selected Item" Command="{Binding DeleteRowCommand}"
+            <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Delete Selected Item" Command="{Binding DeleteRowCommand}"
                     CommandParameter="{Binding ElementName=dgDictinary,Path=SelectedItem}"/>
-            <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
-            <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Content="Filter" Command="{Binding FilterWordsCommand}"/>
-            <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Content="Pass The Test" Command="{Binding PassTestCommand}"
+            <TextBox x:Name="tbFilter" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Content="Filter" Command="{Binding FilterWordsCommand}"
+                    CommandParameter="{Binding ElementName=tbFilter,Path=Text}"/>
+            <TextBlock x:Name="tbTestEng" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding TestingWord.EngWord}"/>
+            <TextBox x:Name="tbTestRus" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Button Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="4" Content="Pass The test" Command="{Binding PassTestCommand}"
                     Margin="12,2,12,2"/>
+            <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Content="Answer" Command="{Binding AnswerTestCommand}"
+                    Margin="12,2,12,2">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConverter}">
+                        <Binding ElementName="tbTestEng" Path="Text"/>
+                        <Binding ElementName="tbTestRus" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
         </Grid>
     </Grid>
 </Window>

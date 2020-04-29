@@ -13,12 +13,24 @@ namespace EngRusDictionary.ViewModel
     {
         ObservableCollection<Word> _words = new ObservableCollection<Word>();
         public ObservableCollection<Word> Words { get => _words; }
+        private Word _testinWord = new Word();
+
+        public Word TestingWord
+        {
+            get { return _testinWord; }
+            set
+            {
+                _testinWord = value;
+                OnPropertyChanged(new PropertyChangedEventArgs(nameof(TestingWord)));
+            }
+        }
 
         public RelayCommand DeleteRowCommand { get; private set; }
         public RelayCommand AddWordCommand { get; private set; }
         public RelayCommand UpdateTableCommand { get; private set; }
         public RelayCommand FilterWordsCommand { get; private set; }
         public RelayCommand PassTestCommand { get; private set; }
+        public RelayCommand AnswerTestCommand { get; private set; }
 
 
 
@@ -30,16 +42,45 @@ namespace EngRusDictionary.ViewModel
             DeleteRowCommand = new RelayCommand(RemoveWord, (obj) => obj != null);
             AddWordCommand = new RelayCommand(AddWord, CanAddWord);
             UpdateTableCommand = new RelayCommand(UpdateTable);
-
-
             FilterWordsCommand = new RelayCommand(FilterWords);
-            PassTestCommand = new RelayCommand(UpdateTable);
+            PassTestCommand = new RelayCommand(PassTest);
+            AnswerTestCommand = new RelayCommand(AnswerTest, CanAnswerTest);
+        }
+
+        private bool CanAnswerTest(object arg)
+        {
+            var values = (object[])arg;
+            string engWord = (values[0] as string).Trim(' ');
+            string rusWord = (values[1] as string).Trim(' ');
+
+            return engWord != string.Empty && rusWord != string.Empty;
+        }
+
+        private void AnswerTest(object obj)
+        {
+            var values = (object[])obj;
+            string engWord = (values[0] as string).Trim(' ');
+            string rusWord = (values[1] as string).Trim(' ');
+
+            string res = rusWord == TestingWord.RusWord ? "Correct" : "Wrong";
+            MessageBox.Show($"{res}");
+        }
+
+        private void PassTest(object obj = null)
+        {
+            Random rnd = new Random();
+            TestingWord = Words[rnd.Next(0, Words.Count - 1)];
         }
 
         private void FilterWords(object obj)
         {
-            MainView = new DataView(); 
+            string word = obj as string;
+            var rows = MainTable.Select($"EngWord not like '%'+'{word}'+'%' and RusWord not like '%'+'{word}'+'%'");
+
+            foreach (var row in rows)
+                MainTable.Rows.Remove(row);
         }
+
 
         private void UpdateTable(object obj = null)
         {

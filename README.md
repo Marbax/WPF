@@ -58,3 +58,14 @@
 
 </p></details>
 
+<details><summary> 6.XML flow document , tree view, FlowDocumentReader. </summary><p>
+
+---
+
+[WPF differen useless examples ](CW/lesson_06/ "CW\lesson_06\")   
+
+[WPF dataGrid , Binding , Command , Converter , MVVM](HW/lesson_06/EngRusDictionary "CW\lesson_06\EngRusDictionary")   
+
+---
+
+</p></details>
