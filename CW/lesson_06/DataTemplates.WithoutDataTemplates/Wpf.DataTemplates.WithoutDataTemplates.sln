@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.DataTemplates.WithoutDataTemplates", "Wpf.DataTemplates.WithoutDataTemplates\Wpf.DataTemplates.WithoutDataTemplates.csproj", "{68DE635C-6C80-4390-805B-BB03769D2E2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68DE635C-6C80-4390-805B-BB03769D2E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DE635C-6C80-4390-805B-BB03769D2E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DE635C-6C80-4390-805B-BB03769D2E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DE635C-6C80-4390-805B-BB03769D2E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EAC8FD7-553C-43B3-93A7-514A507C2E9D}
+	EndGlobalSection
+EndGlobal

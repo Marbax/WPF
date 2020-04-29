@@ -1,0 +1,36 @@
+﻿<Window x:Class="Wpf.Commands.WithoutRaiseCanExecuteChanged.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="200"
+        Title="MainWindow"
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Colors">
+                <MenuItem Command="{Binding RedCommand}" Header="_Red"/>
+                <MenuItem Command="{Binding GreenCommand}" Header="_Green"/>
+                <MenuItem Command="{Binding BlueCommand}" Header="_Blue"/>
+            </MenuItem>
+        </Menu>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Background="{Binding SelectedColor}" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0"/>
+            <Button Command="{Binding RedCommand}" Grid.Column="0" Grid.Row="2">Red</Button>
+            <Button Command="{Binding GreenCommand}" Grid.Column="2" Grid.Row="2">Green</Button>
+            <Button Command="{Binding BlueCommand}" Grid.Column="4" Grid.Row="2">Blue</Button>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="Wpf.Commands.Events.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        Height="200"
+        Title="MainWindow"
+        Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Interactivity:Interaction.Triggers>
+        <Interactivity:EventTrigger EventName="Loaded">
+            <Interactivity:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </Interactivity:EventTrigger>
+        <Interactivity:EventTrigger EventName="StateChanged">
+            <Interactivity:InvokeCommandAction Command="{Binding StateChangedCommand}"/>
+        </Interactivity:EventTrigger>
+    </Interactivity:Interaction.Triggers>
+    <ListBox ItemsSource="{Binding Events}">
+        <Interactivity:Interaction.Triggers>
+            <Interactivity:EventTrigger EventName="SelectionChanged">
+                <Interactivity:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+            </Interactivity:EventTrigger>
+        </Interactivity:Interaction.Triggers>
+    </ListBox>
+</Window>

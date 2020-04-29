@@ -1,0 +1,14 @@
+﻿<Window x:Class="Wpf.MarkupExtensions.Custom.Today.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Local="clr-namespace:Wpf.MarkupExtensions.Custom.Today"
+        Height="100"
+        Title="MainWindow"
+        Width="300"
+        WindowStartupLocation="CenterScreen">
+    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Run Text="Today: "/>
+        <Run FontWeight="Bold" Text="{Local:Today}"/>
+    </TextBlock>
+</Window>

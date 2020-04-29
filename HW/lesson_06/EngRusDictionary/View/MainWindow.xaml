@@ -1,0 +1,75 @@
+﻿<Window x:Class="EngRusDictionary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EngRusDictionary"
+        xmlns:VM="clr-namespace:EngRusDictionary.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <VM:MyConverter x:Key="MyConverter"/>
+    </Window.Resources>
+    <Grid Style="{StaticResource DarkestStyle}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <!--                              DICTIONARY                     -->
+        <DataGrid x:Name="dgDictinary" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding MainView}" AutoGenerateColumns="False"
+                  SelectionMode="Single" SelectionUnit="FullRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" IsReadOnly="True" Width="0.5*" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Eglish Word" Width="3*" Binding="{Binding Path=EngWord}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Russian Word" Width="3*" Binding="{Binding Path=RusWord}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--                            HORIZONTAL GRID SPLITTER                     -->
+        <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <!--                           CONTROLS GRID DEFINATIONS                     -->
+        <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource DarkestStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <!--                               CONTROLS                            -->
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Update Table" Command="{Binding UpdateTableCommand}"
+                    Margin="12,2,12,2"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Eng"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Text="Rus"/>
+            <TextBox x:Name="EngWordInput" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="RusWordInput" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="Add Word" Command="{Binding AddWordCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConverter}">
+                        <Binding ElementName="EngWordInput" Path="Text"/>
+                        <Binding ElementName="RusWordInput" Path="Text"/>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Content="Delete Selected Item" Command="{Binding DeleteRowCommand}"
+                    CommandParameter="{Binding ElementName=dgDictinary,Path=SelectedItem}"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Content="Filter" Command="{Binding FilterWordsCommand}"/>
+            <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Content="Pass The Test" Command="{Binding PassTestCommand}"
+                    Margin="12,2,12,2"/>
+        </Grid>
+    </Grid>
+</Window>
