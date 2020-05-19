@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "001_AnimationFont", "001_AnimationFont\001_AnimationFont.csproj", "{D70313FA-CE18-4876-977A-6F1C26D62066}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "002_WindowAnim", "002_WindowAnim\002_WindowAnim.csproj", "{96556D57-E4F5-442E-B250-E0F40DDDF212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003_ButtonAnimation", "006_ButtonAnimation\003_ButtonAnimation.csproj", "{15E68028-3DBC-46E5-94D7-732C0D6F4448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "004_RepeatAnim", "003_RepeatAnim\004_RepeatAnim.csproj", "{EC120680-2A14-451A-934F-7B8438C78431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "005_AnimationSpeed", "004_AnimationSpeed\005_AnimationSpeed.csproj", "{73D6E77A-DE6C-41BC-BF29-3CA09C153671}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "006_EventsAnim", "005_EventsAnim\006_EventsAnim.csproj", "{EC15041E-A688-41ED-8890-31B331438444}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D70313FA-CE18-4876-977A-6F1C26D62066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70313FA-CE18-4876-977A-6F1C26D62066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70313FA-CE18-4876-977A-6F1C26D62066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70313FA-CE18-4876-977A-6F1C26D62066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96556D57-E4F5-442E-B250-E0F40DDDF212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96556D57-E4F5-442E-B250-E0F40DDDF212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96556D57-E4F5-442E-B250-E0F40DDDF212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96556D57-E4F5-442E-B250-E0F40DDDF212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E68028-3DBC-46E5-94D7-732C0D6F4448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E68028-3DBC-46E5-94D7-732C0D6F4448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E68028-3DBC-46E5-94D7-732C0D6F4448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E68028-3DBC-46E5-94D7-732C0D6F4448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC120680-2A14-451A-934F-7B8438C78431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC120680-2A14-451A-934F-7B8438C78431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC120680-2A14-451A-934F-7B8438C78431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC120680-2A14-451A-934F-7B8438C78431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D6E77A-DE6C-41BC-BF29-3CA09C153671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D6E77A-DE6C-41BC-BF29-3CA09C153671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D6E77A-DE6C-41BC-BF29-3CA09C153671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D6E77A-DE6C-41BC-BF29-3CA09C153671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC15041E-A688-41ED-8890-31B331438444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC15041E-A688-41ED-8890-31B331438444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC15041E-A688-41ED-8890-31B331438444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC15041E-A688-41ED-8890-31B331438444}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+﻿<Window x:Class="Wpf.Resources.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        SizeToContent="Height"
+        Title="Resources"
+        Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="backgroundBrush" EndPoint="1,1" StartPoint="0,0">
+            <GradientStop Color="Yellow" Offset="0"/>
+            <GradientStop Color="Red" Offset="1"/>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="foregroundBrush">White</SolidColorBrush>
+        <Thickness x:Key="padding">10</Thickness>
+        <System:Double x:Key="fontSize">20</System:Double>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Background="{StaticResource backgroundBrush}"
+                Content="Button 1"
+                FontSize="{StaticResource fontSize}"
+                Foreground="{StaticResource foregroundBrush}"
+                Grid.Row="0"
+                Padding="{StaticResource padding}"/>
+        <Button Background="{StaticResource backgroundBrush}"
+                Content="Button 2"
+                FontSize="{StaticResource fontSize}"
+                Foreground="{StaticResource foregroundBrush}"
+                Grid.Row="2"
+                Padding="{StaticResource padding}"/>
+    </Grid>
+</Window>

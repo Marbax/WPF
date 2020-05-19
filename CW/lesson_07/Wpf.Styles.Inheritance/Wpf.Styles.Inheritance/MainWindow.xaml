@@ -1,0 +1,36 @@
+﻿<Window x:Class="Wpf.Styles.Inheritance.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        SizeToContent="Height"
+        Title="Styles"
+        Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Typography.Capitals" Value="SmallCaps"/>
+        </Style>
+        <Style x:Key="acceptButtonStyle" BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Green"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="declineButtonStyle" BasedOn="{StaticResource acceptButtonStyle}" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0">Common Button</Button>
+        <Button Grid.Row="2" Style="{StaticResource acceptButtonStyle}">Accept Button</Button>
+        <Button Grid.Row="4" Style="{StaticResource declineButtonStyle}">Decline Button</Button>
+    </Grid>
+</Window>

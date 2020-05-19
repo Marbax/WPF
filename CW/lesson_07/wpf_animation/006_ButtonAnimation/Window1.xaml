@@ -1,0 +1,33 @@
+﻿<Window x:Class="ButtonAnimation.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Button Margin="25,22,20,0" Foreground="White" Name="button1" MouseEnter="button1_MouseEnter" MouseLeave="button1_MouseLeave" Height="97" VerticalAlignment="Top">Button
+            <Button.Background>
+                <SolidColorBrush x:Name="B1" Color="Black"/>
+            </Button.Background>
+        </Button>
+        <Button Margin="25,0,20,24" Name="button2" Height="90" VerticalAlignment="Bottom">Button
+            <Button.Background>
+                <SolidColorBrush Color="Red" x:Name="scb"/>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="scb" Duration="0:0:1" To="Blue"  Storyboard.TargetProperty="Color"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Button.MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="B1" Duration="0:0:1" To="Red"  Storyboard.TargetProperty="Color"></ColorAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+</Window>

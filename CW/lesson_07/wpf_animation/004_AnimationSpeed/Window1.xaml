@@ -1,0 +1,10 @@
+﻿<Window x:Class="AnimationSpeed.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="286">
+    <Grid>
+        <Button Margin="12,12,0,125" Name="button1" Click="button1_Click" HorizontalAlignment="Left" Width="248">Normal</Button>
+        <Button Height="107" Margin="12,0,0,12" Name="button2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="248" Click="button2_Click">Test</Button>
+        <Button Margin="865,4,0,5" Name="button3" HorizontalAlignment="Left" Width="25" Click="button3_Click">&lt;&lt;</Button>
+    </Grid>
+</Window>

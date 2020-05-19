@@ -1,0 +1,9 @@
+﻿<Window x:Class="WindowAnim.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Button Height="23" HorizontalAlignment="Right" Name="button1" VerticalAlignment="Bottom" Width="75" Click="button1_Click">&gt;&gt;</Button>
+        <Button Height="23" HorizontalAlignment="Right" Name="button2" VerticalAlignment="Bottom" Width="75" Click="button2_Click" Margin="0,0,0,29">&lt;&lt;</Button>
+    </Grid>
+</Window>

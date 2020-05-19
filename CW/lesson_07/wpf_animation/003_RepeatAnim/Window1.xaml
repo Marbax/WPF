@@ -1,0 +1,22 @@
+﻿<Window x:Class="RepeatAnim.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Window1" Height="300" Width="300">
+    <Grid>
+        <Button Height="60" Margin="47,52,45,0" Name="button1" VerticalAlignment="Top" Content="Button">
+            <Button.Background>
+                <SolidColorBrush x:Name="ButtonBack" Color="Blue"></SolidColorBrush>
+            </Button.Background>
+        </Button>
+        <Button Margin="47,118,45,84" Name="button2" Content="Button">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                    <GradientStop  Color="Blue" Offset="0"></GradientStop>
+                    <GradientStop x:Name="ButtonBack2" Color="Aqua" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+               
+            </Button.Background>
+        </Button>
+      
+    </Grid>
+</Window>

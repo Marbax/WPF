@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Button">
+        <Setter Property="Button.Background" Value="Black"></Setter>
+        <Setter Property="Button.Foreground" Value="White"></Setter>
+        <Setter Property="Button.BorderBrush" Value="White"></Setter>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="Button.Background" Value="Black"></Setter>
+        <Setter Property="Button.Foreground" Value="White"></Setter>
+        <Setter Property="Button.BorderBrush" Value="White"></Setter>
+    </Style>
+
+
+    <Style TargetType="TextBox">
+        <Setter Property="TextBox.Background" Value="Black"></Setter>
+        <Setter Property="TextBox.Foreground" Value="White"></Setter>
+        <Setter Property="TextBox.BorderBrush" Value="White"></Setter>
+    </Style>
+
+    <Style TargetType="ListBox">
+        <Setter Property="ListBox.Background" Value="Black"></Setter>
+        <Setter Property="TextBox.Foreground" Value="White"></Setter>
+        <Setter Property="ListBox.BorderBrush" Value="White"></Setter>
+    </Style>
+
+    <Style TargetType="ListBoxItem">
+        <Setter Property="ListBoxItem.Background" Value="Black"></Setter>
+        <Setter Property="ListBoxItem.Foreground" Value="White"></Setter>
+        <Setter Property="ListBoxItem.BorderBrush" Value="White"></Setter>
+    </Style>
+
+    <Style TargetType="Grid">
+        <Setter Property="Grid.Background" Value="Black"></Setter>
+    </Style>
+</ResourceDictionary>

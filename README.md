@@ -62,9 +62,21 @@
 
 ---
 
-[WPF differen useless examples ](CW/lesson_06/ "CW\lesson_06\")   
+[WPF different useless examples ](CW/lesson_06/ "CW\lesson_06\")   
 
 [WPF dataGrid , Binding , Command , Converter , MVVM](HW/lesson_06/EngRusDictionary "CW\lesson_06\EngRusDictionary")   
+
+---
+
+</p></details>
+
+<details><summary> 7.Animations , control templates , triggers. </summary><p>
+
+---
+
+[WPF different Animations , control templates , triggers ](CW/lesson_07/ "CW\lesson_07\")   
+
+[WPF Animations , control templates , triggers , not bad style](HW/lesson_07/AuthWindow "CW\lesson_07\AuthWindow")   
 
 ---
 
