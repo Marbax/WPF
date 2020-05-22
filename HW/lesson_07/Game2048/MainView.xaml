@@ -1,0 +1,106 @@
+﻿<Window x:Class="Game2048.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:Views="clr-namespace:Game2048.Views"
+        Background="#FFF8F1E9"
+        Height="620"
+        ResizeMode="NoResize"
+        Title="2048"
+        Width="530"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MainViewStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <!--#region KEYS-->
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding MoveDownCommand}" Key="Down"/>
+        <KeyBinding Command="{Binding MoveLeftCommand}" Key="Left"/>
+        <KeyBinding Command="{Binding MoveRightCommand}" Key="Right"/>
+        <KeyBinding Command="{Binding MoveUpCommand}" Key="Up"/>
+        <KeyBinding Command="{Binding NewGameCommand}" Key="N"/>
+    </Window.InputBindings>
+    <!--#endregion-->
+
+    <!--#region STARTUP-->
+    <Interactivity:Interaction.Triggers>
+        <Interactivity:EventTrigger EventName="Loaded">
+            <Interactivity:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </Interactivity:EventTrigger>
+    </Interactivity:Interaction.Triggers>
+    <!--#endregion-->
+
+    <!--#region MAIN_GRID_DEFINATIONS-->
+    <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <!--#region SCORE_FIELDS-->
+        <Views:InfoUserControl Grid.Column="0" Grid.Row="0" Title="Score" Value="{Binding Score}"/>
+        <Views:InfoUserControl Grid.Column="2" Grid.Row="0" Title="High Score" Value="{Binding HighScore}"/>
+        <!--#endregion-->
+
+        <!--#region GAME_FIELD-->
+        <Border Background="#FFBBADA0"
+                CornerRadius="10"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="2"
+                Padding="3">
+
+            <Grid>
+                <!--#region GAME_FIELD_GRID_DEFINATIONS-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--#endregion-->
+
+                <Views:TileUserControl Grid.Column="0" Grid.Row="0" Value="{Binding Cell00}"/>
+                <Views:TileUserControl Grid.Column="0" Grid.Row="1" Value="{Binding Cell10}"/>
+                <Views:TileUserControl Grid.Column="0" Grid.Row="2" Value="{Binding Cell20}"/>
+                <Views:TileUserControl Grid.Column="0" Grid.Row="3" Value="{Binding Cell30}"/>
+                <Views:TileUserControl Grid.Column="1" Grid.Row="0" Value="{Binding Cell01}"/>
+                <Views:TileUserControl Grid.Column="1" Grid.Row="1" Value="{Binding Cell11}"/>
+                <Views:TileUserControl Grid.Column="1" Grid.Row="2" Value="{Binding Cell21}"/>
+                <Views:TileUserControl Grid.Column="1" Grid.Row="3" Value="{Binding Cell31}"/>
+                <Views:TileUserControl Grid.Column="2" Grid.Row="0" Value="{Binding Cell02}"/>
+                <Views:TileUserControl Grid.Column="2" Grid.Row="1" Value="{Binding Cell12}"/>
+                <Views:TileUserControl Grid.Column="2" Grid.Row="2" Value="{Binding Cell22}"/>
+                <Views:TileUserControl Grid.Column="2" Grid.Row="3" Value="{Binding Cell32}"/>
+                <Views:TileUserControl Grid.Column="3" Grid.Row="0" Value="{Binding Cell03}"/>
+                <Views:TileUserControl Grid.Column="3" Grid.Row="1" Value="{Binding Cell13}"/>
+                <Views:TileUserControl Grid.Column="3" Grid.Row="2" Value="{Binding Cell23}"/>
+                <Views:TileUserControl Grid.Column="3" Grid.Row="3" Value="{Binding Cell33}"/>
+            </Grid>
+        </Border>
+        <!--#endregion-->
+
+        <Button Content="New Game" Grid.Column="2" Grid.Row="3" Height="50" Width="200" Margin="5" Command="{Binding NewGameCommand}"/>
+
+    </Grid>
+</Window>

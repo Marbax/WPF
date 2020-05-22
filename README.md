@@ -78,6 +78,8 @@
 
 [WPF Animations , control templates , triggers , not bad style](HW/lesson_07/AuthWindow "CW\lesson_07\AuthWindow")   
 
+[WPF control templates , triggers , user controls , mvvm , good template](HW/lesson_07/Game2048 "CW\lesson_07\Game2048")   
+
 ---
 
 </p></details>
